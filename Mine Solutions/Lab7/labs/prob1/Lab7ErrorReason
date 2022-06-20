@@ -1,0 +1,37 @@
+ArrayList  6 interfaces and classes
+
+Interface:
+List<E>
+	- Collection<E>
+	- Iterable<E>
+
+RandomAccess
+Cloneable
+java.io.Serializable
+
+B.
+To override equals method , it must be of signature
+@Override
+public boolean equals(Object ob)
+Which is not followed by the given problem statement and uses the current equals method.
+
+C.
+Since Hashmap is being used to store the employees and Employee class is used as a key which is not Hash compliant.
+Thus, to overcome this, Employee class should override the Hash method from the object class.
+@Override
+public int hashCode() {
+	return Objects.hash(name,salary);
+}
+
+D.
+The Employee claas has a mutable setter to set the visited attribute. The attribute is set to false by default and when
+ any item is found in the array, the attribute is set to true, thus this triggers the error since it cannot
+ find the object with same name and salary because visited attribute is updated to true.
+
+The following code : tracker.get(e0.setVisited(true)
+Changes the value visited in the object in the HashMap and this value is used in the equals method and hashCode.
+
+
+E.
+1. If the type D is a class and implements interfaces B,C and A, the method in class D must be be made abstract or there needs to be a concrete implementation of the method in class D.
+2. When type D is an interface, the clash is resolved by overriding the method and making it default.

@@ -1,0 +1,11 @@
+1.
+    A.
+      i. Parameters :
+         Free variables : s,t
+
+      ii. Parameters : s,t
+          Free variables : ignoreCase
+
+
+
+2. A => Returns 0 if both the objects have the same name.
